@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #060913;
+    color: #f3f4f6;
+    font-family: 'Urbanist', 'Inter', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  body.light-theme {
+    background-color: #f4f5f8 !important;
+    color: #0f172a !important;
+  }
+}
+
+/* Global Light Mode Text & Contrast Overrides */
+.light-theme {
+  color: #0f172a !important;
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+  color: #0f172a !important;
+}
+
+.light-theme p,
+.light-theme span:not(.glass-pill):not(.eyebrow),
+.light-theme li,
+.light-theme label,
+.light-theme div:not(.glass-panel) {
+  color: #1e293b;
+}
+
+.light-theme .text-white,
+.light-theme .text-white\/90,
+.light-theme .text-white\/80,
+.light-theme .text-white\/70,
+.light-theme .text-white\/60,
+.light-theme .text-white\/50,
+.light-theme .text-gray-50,
+.light-theme .text-gray-100,
+.light-theme .text-gray-200,
+.light-theme .text-gray-300 {
+  color: #1e293b !important;
+}
+
+.light-theme .text-gray-400,
+.light-theme .text-gray-500 {
+  color: #475569 !important;
+}
+
+.light-theme .text-cyan-300,
+.light-theme .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+.light-theme .text-indigo-300,
+.light-theme .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+
+/* Light Mode Card & Panel Styling */
+.light-theme .glass-panel {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08) !important;
+}
+
+.light-theme .glass-pill {
+  background: rgba(79, 70, 229, 0.12) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(79, 70, 229, 0.25) !important;
+  color: #4f46e5 !important;
+}
+
+.light-theme section {
+  background-color: #f4f5f8 !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light-theme footer {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+.light-theme [class*="bg-[#060913]"],
+.light-theme [class*="bg-[#0d1326]"],
+.light-theme [class*="bg-[#0a0e1c]"],
+.light-theme [class*="bg-[#080c18]"],
+.light-theme [class*="bg-[#04060d]"],
+.light-theme [class*="bg-[#03050a]"] {
+  background-color: #f4f5f8 !important;
+}
+
+/* 3D Cards in Light Mode */
+.light-theme .ring3d-card,
+.light-theme .cf3d,
+.light-theme .flip3d-face {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1) !important;
+}
+
+.light-theme .flip3d-back {
+  background: linear-gradient(to bottom, #e0e7ff, #ffffff) !important;
+  color: #0f172a !important;
+  border-color: #818cf8 !important;
+}
+
+.light-theme button.bg-white\/5,
+.light-theme button.bg-white\/10 {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.light-theme .font-serif {
+  font-weight: 700 !important;
+}
+
+.light-theme .font-script {
+  color: #3730a3 !important;
+  font-weight: 700 !important;
+}
+
+/* Custom Typography Utilities */
+.font-serif {
+  font-family: 'Playfair Display', 'Bodoni Moda', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-script {
+  font-family: 'Dancing Script', 'Petit Formal Script', cursive;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+}
+
+/* 3D Ring Cylinder Hero Styling */
+.ring3d-container {
+  perspective: 1700px;
+  perspective-origin: 50% 46%;
+}
+
+.ring3d-stage {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ring3d-card {
+  backface-visibility: visible;
+  transition: all 0.5s ease-out;
+  transform-origin: center center;
+}
+
+.ring3d-card:hover {
+  filter: brightness(1.15) drop-shadow(0 20px 40px rgba(99, 102, 241, 0.35));
+}
+
+/* 3D Overlapping Fan Showcase (.cf3d) */
+.cf3d {
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+.cf3d:hover {
+  transform: rotateY(0deg) translateZ(120px) scale(1.15) !important;
+  z-index: 50 !important;
+  box-shadow: 0 40px 80px rgba(99, 102, 241, 0.4), 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+/* 3D Interactive Rotating Tech Cube (.cube3d) */
+.cube3d-stage {
+  perspective: 1600px;
+}
+
+.cube3d {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .cube3d {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* 3D Service Flip Cards (.flip3d) */
+.flip3d {
+  perspective: 1200px;
+}
+
+.flip3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.flip3d:hover .flip3d-inner {
+  transform: rotateY(180deg);
+}
+
+.flip3d-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.flip3d-back {
+  transform: rotateY(180deg);
+}
+
+/* Custom Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(13, 19, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Glow Utilities */
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.35);
+}
+
+.glow-indigo {
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.4);
+}
